@@ -1,7 +1,7 @@
 import React from "react";
 
-function profileEdit() {
+function ProfileEdit() {
   return <div>edit</div>;
 }
 
-export default profileEdit;
+export default ProfileEdit;

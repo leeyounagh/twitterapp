@@ -14,6 +14,7 @@ export default function Router() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/posts" element={<PostPage />} />
+      <Route path="/posts/:id" element={<PostPage />} />
       <Route path="/posts/new" element={<PostNew />} />
       <Route path="/posts/edit/:id" element={<PostEdit />} />
       <Route path="/profile" element={<ProfilePage />} />
