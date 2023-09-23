@@ -9,6 +9,7 @@ import SearchPage from "pages/search";
 import NotificationPage from "pages/notification";
 import Login from "pages/users/login";
 import Signup from "pages/users/signup";
+import PostDetail from "pages/posts/detail";
 
 interface RouterProps {
   isAuthenticated: boolean;
@@ -20,7 +21,7 @@ export default function Router({ isAuthenticated }: RouterProps) {
         <>
           <Route path="/" element={<HomePage />} />
           <Route path="/posts" element={<PostPage />} />
-          <Route path="/posts/:id" element={<PostPage />} />
+          <Route path="/posts/:id" element={<PostDetail />} />
           <Route path="/posts/new" element={<PostNew />} />
           <Route path="/posts/edit/:id" element={<PostEdit />} />
           <Route path="/profile" element={<ProfilePage />} />
