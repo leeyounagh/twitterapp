@@ -9,6 +9,7 @@ $danger: #dc2626;
 $dangerDark: #dc26268e;
 $gray: #6b7280;
 $grayDark: #35383d;
+$backgroundLight: #263340;
 
 $font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -66,7 +67,7 @@ body {
   color: $white;
   &_grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     background-color: transparent;
     border: 1px solid $border;
     button {
@@ -83,6 +84,25 @@ body {
 }
 // home 레이아웃
 .home {
+  &_search-div {
+    display: flex;
+    justify-content: center;
+  }
+
+  &_search {
+    @extend .post-form_input;
+    background-color: $backgroundLight;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    padding: 12px;
+    width: 80% !important;
+    font-size: 15px;
+    font-weight: 600;
+    &:focus {
+      border: 1px solid $primaryColor;
+      background-color: $activeBg;
+    }
+  }
   &_top {
     @extend .transparent;
     @extend .sticky;
@@ -118,6 +138,39 @@ body {
 }
 
 .post-form {
+  &_input {
+    font-family: &font;
+    padding: 8px;
+    border: none;
+    resize: none;
+    outline: none;
+    margin-top: 8px;
+    width: calc(100% - 32px);
+  }
+  &_hashtags {
+    padding: 16px;
+    border-bottom: 1px solid $border;
+    &-outputs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 1px;
+      align-items: 8px 1px;
+    }
+    &-tag {
+      font-size: 14px;
+      border: 1px solid $primaryColor;
+      color: $primaryColor;
+      border-radius: 10px;
+      padding: 2px 8px;
+      margin-right: 6px;
+      cursor: pointer;
+      &:hover,
+      &:focus {
+        color: $activeBorder;
+        border: 1px solid $activeBorder;
+      }
+    }
+  }
   &_textarea {
     font-family: $font;
     min-height: 120px;

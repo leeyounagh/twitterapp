@@ -16,6 +16,7 @@ export default function PostDetail() {
     if (params.id) {
       const docRef = doc(db, "posts", params.id);
       const docSnap = await getDoc(docRef);
+
       setPost({ ...(docSnap?.data() as PostProps), id: docSnap?.id });
     }
   }, [params.id]);
@@ -25,6 +26,7 @@ export default function PostDetail() {
       getPost();
     }
   }, [getPost, params.id]);
+
   return (
     <div className="post">
       <div className="post_header">
